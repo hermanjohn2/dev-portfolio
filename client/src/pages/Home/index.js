@@ -15,7 +15,7 @@ const msPerChar = 200;
 // Each individual line being printed in Animation
 const firstLine = 'Hi,';
 const secondLine = `I'm John.`;
-const thirdLine = 'A web developer.';
+const thirdLine = 'A developer.';
 
 const Home = ({ wait }) => {
 	const [message1, setMessage1] = useState('');
@@ -45,7 +45,11 @@ const Home = ({ wait }) => {
 	useEffect(() => {
 		if (!hasAnimated) {
 			animateText(firstLine, setMessage1, msBeforeAnimate);
-			animateText(secondLine, setMessage2, firstLine.length * msPerChar + msBeforeAnimate);
+			animateText(
+				secondLine,
+				setMessage2,
+				firstLine.length * msPerChar + msBeforeAnimate
+			);
 			animateText(
 				thirdLine,
 				setMessage3,
