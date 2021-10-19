@@ -8,15 +8,9 @@ import assignmentData from '../../db/assignments.json';
 const Assignments = () => {
 	return (
 		<div>
-			<Navigation />
-			<h1 className="headline my-3 text-center">
-				Examples of Code
-			</h1>
+			<h1 className="headline my-3 text-center">Examples of Code</h1>
 			{assignmentData.map(assignment => (
-				<AssignmentCard
-					key={assignment.id}
-					data={assignment}
-				/>
+				<AssignmentCard key={assignment.id} data={assignment} />
 			))}
 		</div>
 	);

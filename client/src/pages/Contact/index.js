@@ -16,8 +16,6 @@ const Contact = () => {
 
 	return (
 		<div>
-			<Navigation />
-
 			<Container>
 				<Row>
 					<Col md={12}>
@@ -40,12 +38,12 @@ const Contact = () => {
 							</h2>
 						</Card.Body>
 					</Col>
-					<Col variant="top" className="pt-3" md={4}>
+					{/* <Col variant="top" className="pt-3" md={4}>
 						<Card.Img
 							className="headshot shadow-lg"
 							src={aboutMeData[0].avatarUrl}
 						/>
-					</Col>
+					</Col> */}
 				</Row>
 			</Card>
 		</div>

@@ -61,7 +61,6 @@ const Home = ({ wait }) => {
 
 	return (
 		<div>
-			<Navigation />
 			<Container>
 				<Row>
 					<Col md={12}>

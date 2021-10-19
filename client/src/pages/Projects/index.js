@@ -8,7 +8,6 @@ import projectData from '../../db/projects.json';
 const Projects = ({ wait }) => {
 	return (
 		<div>
-			<Navigation />
 			<h1 className="headline my-3 text-center">Projects</h1>
 			{projectData.map(project => (
 				<ProjectCard key={project.id} data={project} wait={wait} />
