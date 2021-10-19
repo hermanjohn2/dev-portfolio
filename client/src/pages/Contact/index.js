@@ -1,15 +1,11 @@
 import React from 'react';
 import { openPopupWidget } from 'react-calendly';
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-
 import './style.css';
 import aboutMeData from '../../db/aboutMe.json';
-
-import Navigation from '../../components/Navigation';
 
 const Contact = () => {
 	const url = 'https://calendly.com/john-herman-dev/tutorial-session';
@@ -38,12 +34,6 @@ const Contact = () => {
 							</h2>
 						</Card.Body>
 					</Col>
-					{/* <Col variant="top" className="pt-3" md={4}>
-						<Card.Img
-							className="headshot shadow-lg"
-							src={aboutMeData[0].avatarUrl}
-						/>
-					</Col> */}
 				</Row>
 			</Card>
 		</div>

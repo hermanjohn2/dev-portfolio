@@ -4,7 +4,6 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
-import Assignments from './pages/Assignments';
 import AboutMe from './pages/AboutMe';
 import Navigation from './components/Navigation';
 
@@ -30,7 +29,6 @@ const App = () => {
 					path="/projects"
 					render={props => <Projects {...props} wait={wait} />}
 				/>
-				<Route exact path="/assignments" component={Assignments} />
 				<Route exact path="/about" component={AboutMe} />
 			</Switch>
 		</Router>

@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import Navigation from '../../components/Navigation';
 
 // Time before the animation begins
 const msBeforeAnimate = 100;

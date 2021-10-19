@@ -1,8 +1,5 @@
 import React from 'react';
-
-import Navigation from '../../components/Navigation';
 import ProjectCard from '../../components/ProjectCard';
-
 import projectData from '../../db/projects.json';
 
 const Projects = ({ wait }) => {

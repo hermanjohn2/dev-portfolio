@@ -7,21 +7,29 @@
 		"resumePdf": "/pdf/john-herman-resume.pdf",
 		"linkedInUrl": "https://www.linkedin.com/in/john-joseph-herman/",
 		"gitHubUrl": "https://github.com/hermanjohn2",
-		"title": "Full Stack Web Developer",
+		"title": "Full Stack Developer",
 		"avatarUrl": "/images/headshot1.jpg",
-		"brandStatement": "Honest, dependable, hard-working Full Stack Web Developer with 9+ years of experience in management, staffing, training, and business development. Received a Certificate in Full Stack Web Development from the Georgia Institute of Technology, where I gained skills in JavaScript, HTML, CSS, Node.js, React.js, MySQL and MongoDB. Demonstrates strong problem-solving qualities, adaptability, and excellent interpersonal skills. Applied aspects of UX and agile development in a recent project where I worked on a team of two to develop a MERN stack application that creates a collaborative music queue.",
-		"languages": ["JavaScript", "HTML", "CSS", "Node"],
-		"frameworks": ["React.js", "Express.js", "jQuery", "Bootstrap", "Foundation", "Handlebars.js"],
-		"databases": ["MongoDB", "MySQL"],
+		"brandStatement": "Honest, dependable, hard-working Full Stack Developer at Atlanta Regional Commission. Received a certificate in Full Stack Web Development from the Georgia Institute of Technology. Enjoys new projects, talking tech and solving difficult problems. Always seeking new opportunities to learn and develop.",
+		"languages": ["JavaScript", "HTML", "CSS", "Node.js", "TypeScript"],
+		"frameworks": [
+			"React",
+			"Express",
+			"Leaflet",
+			"Charts.js",
+			"Passport",
+			"jQuery",
+			"Bootstrap",
+			"Foundation",
+			"Semantic UI",
+			"Handlebars.js"
+		],
+		"databases": ["MongoDB", "MySQL", "IndexedDB"],
 		"methods": [
 			"Git",
 			"Pair Programming",
 			"Agile Web Development",
-			"Model-View-Controller",
 			"Object-Oriented Programming",
-			"RESTful Web Services",
-			"Heroku",
-			"MongoDB Atlas"
+			"REST Web Services"
 		]
 	}
 ]

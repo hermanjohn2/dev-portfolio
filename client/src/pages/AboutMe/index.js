@@ -1,11 +1,7 @@
 import React from 'react';
-
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
-
-import Navigation from '../../components/Navigation';
 import aboutMeData from '../../db/aboutMe.json';
-
 import './style.css';
 
 const AboutMe = () => {
@@ -52,7 +48,7 @@ const AboutMe = () => {
 						<Card.Text className="text">
 							{aboutMeData[0].databases.map(db => db + ' | ')}
 						</Card.Text>
-						<Card.Title className="title">Frameworks</Card.Title>
+						<Card.Title className="title">Libraries/Frameworks</Card.Title>
 						<Card.Text className="text">
 							{aboutMeData[0].frameworks.map(framework => framework + ' | ')}
 						</Card.Text>
