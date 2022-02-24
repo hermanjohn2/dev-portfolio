@@ -4,24 +4,29 @@
 		"location": "Atlanta, GA",
 		"email": "hermanjohn2@gmail.com",
 		"contactNumber": "(770) 241-6512",
-		"resumePdf": "/pdf/john-herman-resume.pdf",
+		"resumePdf": "/pdf/jh-resume.pdf",
 		"linkedInUrl": "https://www.linkedin.com/in/john-joseph-herman/",
 		"gitHubUrl": "https://github.com/hermanjohn2",
 		"title": "Full Stack Developer",
 		"avatarUrl": "/images/headshot1.jpg",
-		"brandStatement": "Honest, dependable, hard-working Full Stack Developer at Atlanta Regional Commission. Received a certificate in Full Stack Web Development from the Georgia Institute of Technology. Enjoys new projects, talking tech and solving difficult problems. Always seeking new opportunities to learn and develop.",
-		"languages": ["JavaScript", "HTML", "CSS", "Node.js", "TypeScript"],
+		"brandStatement": "Honest, dependable, hard-working Software Engineer at Atlanta Regional Commission. Received a certificate in Full Stack Web Development from the Georgia Institute of Technology. Enjoys new projects, talking tech and solving difficult problems. Always seeking new opportunities to learn and develop.",
+		"languages": [
+			"JavaScript",
+			"HTML",
+			"CSS",
+			"Node.js",
+			"TypeScript",
+			"Python"
+		],
 		"frameworks": [
 			"React",
 			"Express",
 			"Leaflet",
 			"Charts.js",
 			"Passport",
-			"jQuery",
 			"Bootstrap",
 			"Foundation",
-			"Semantic UI",
-			"Handlebars.js"
+			"Semantic UI"
 		],
 		"databases": ["MongoDB", "MySQL", "IndexedDB"],
 		"methods": [

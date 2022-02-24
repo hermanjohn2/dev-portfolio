@@ -1,64 +1,64 @@
 import React from 'react';
-import CardDeck from 'react-bootstrap/CardDeck';
-import Card from 'react-bootstrap/Card';
+// import CardDeck from 'react-bootstrap/CardDeck';
+// import Card from 'react-bootstrap/Card';
 import aboutMeData from '../../db/aboutMe.json';
-import './style.css';
+// import './style.css';
 
 const AboutMe = () => {
 	return (
 		<div>
 			<h1 className="headline my-3 text-center">{aboutMeData[0].name}</h1>
 
-			<CardDeck className="pt-3 px-4">
-				<Card className="shadow-lg">
-					<Card.Body>
-						<Card.Title className="title">{aboutMeData[0].title}</Card.Title>
-						<Card.Text className="text">
+			<div className="pt-3 px-4">
+				<div className="shadow-lg">
+					<div>
+						<h1 className="title">{aboutMeData[0].title}</h1>
+						<div className="text">
 							{aboutMeData[0].brandStatement}
 
-							<Card.Link
+							<a
 								className="link pro-materials-link"
 								href={aboutMeData[0].resumePdf}
 								target="_blank">
 								<br /> <br />
 								Resume
-							</Card.Link>
-							<Card.Link
+							</a>
+							<a
 								className="link pro-materials-link"
 								href={aboutMeData[0].gitHubUrl}
 								target="_blank">
 								GitHub
-							</Card.Link>
-							<Card.Link
+							</a>
+							<a
 								className="link pro-materials-link"
 								href={aboutMeData[0].linkedInUrl}
 								target="_blank">
 								LinkedIn
-							</Card.Link>
-						</Card.Text>
-					</Card.Body>
-				</Card>
-				<Card className="shadow-lg">
-					<Card.Body>
-						<Card.Title className="title">Languages</Card.Title>
-						<Card.Text className="text">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div>
+						<h1 className="title">Languages</h1>
+						<p className="text">
 							{aboutMeData[0].languages.map(lang => lang + ' | ')}
-						</Card.Text>
-						<Card.Title className="title">Databases</Card.Title>
-						<Card.Text className="text">
+						</p>
+						<h1 className="title">Databases</h1>
+						<p className="text">
 							{aboutMeData[0].databases.map(db => db + ' | ')}
-						</Card.Text>
-						<Card.Title className="title">Libraries/Frameworks</Card.Title>
-						<Card.Text className="text">
+						</p>
+						<h1 className="title">Libraries/Frameworks</h1>
+						<p className="text">
 							{aboutMeData[0].frameworks.map(framework => framework + ' | ')}
-						</Card.Text>
-						<Card.Title className="title">Methodologies</Card.Title>
-						<Card.Text className="text">
+						</p>
+						<h1 className="title">Methodologies</h1>
+						<p className="text">
 							{aboutMeData[0].methods.map(method => method + ' | ')}
-						</Card.Text>
-					</Card.Body>
-				</Card>
-			</CardDeck>
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

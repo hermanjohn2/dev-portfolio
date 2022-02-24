@@ -1,44 +1,37 @@
 import React from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-
 const AssignmentCard = ({ data }) => {
 	return (
 		<div>
-			<Card className="shadow-lg p-3 mx-5 my-2 rounded">
-				<Row className="no-gutters">
-					<Col className="pt-3" md={4}>
-						<Card.Link href={data.deployedLink} target="_blank">
-							<Card.Img variant="top" src={data.img} alt={data.alt} />
-						</Card.Link>
-					</Col>
-					<Col md={8}>
-						<Card.Body>
-							<Card.Link
-								className="link"
-								href={data.deployedLink}
-								target="_blank">
+			<div className="shadow-lg p-3 mx-5 my-2 rounded">
+				<div className="no-gutters">
+					<div className="pt-3" md={4}>
+						<a href={data.deployedLink} target="_blank">
+							<img src={data.img} alt={data.alt} />
+						</a>
+					</div>
+					<div>
+						<div>
+							<div className="link" href={data.deployedLink} target="_blank">
 								<Card.Title>{data.title}</Card.Title>
-							</Card.Link>
+							</div>
 
-							<Card.Text>
+							<div>
 								{data.description}
 								<br />
 								<br />
-								<Card.Link
+								<div
 									className="link"
 									href={data.githubLink}
 									rel="noopener noreferrer"
 									target="_blank">
 									GitHub Repository
-								</Card.Link>
-							</Card.Text>
-						</Card.Body>
-					</Col>
-				</Row>
-			</Card>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

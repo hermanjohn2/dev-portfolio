@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import globalUtils from '../../globalUtils';
+// import style from './style';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 
 // Time before the animation begins
 const msBeforeAnimate = 100;
@@ -14,7 +16,7 @@ const firstLine = 'Hi,';
 const secondLine = `I'm John.`;
 const thirdLine = 'A developer.';
 
-const Home = ({ wait }) => {
+const Home = () => {
 	const [message1, setMessage1] = useState('');
 	const [message2, setMessage2] = useState('');
 	const [message3, setMessage3] = useState('');
@@ -25,17 +27,17 @@ const Home = ({ wait }) => {
 	// In this case I will use setMessage for three separate lines, which is why the messageCharger param was needed
 	const animateText = useCallback(
 		async (str, messageChanger, msBeforeStart) => {
-			await wait(msBeforeStart);
+			await globalUtils.wait(msBeforeStart);
 			let arr = str.split('');
 			let msg = '';
 
 			for (const char in arr) {
-				await wait(msPerChar);
+				await globalUtils.wait(msPerChar);
 				msg += arr[char];
 				messageChanger(msg);
 			}
 		},
-		[wait]
+		[globalUtils.wait]
 	);
 
 	// Let's me animate the text when the page renders and only when it renders
@@ -58,18 +60,16 @@ const Home = ({ wait }) => {
 
 	return (
 		<div>
-			<Container>
-				<Row>
-					<Col md={12}>
-						<h1 className="headline my-5 mx-2">
-							{message1}
-							<br />
-							{message2}
-							<br /> {message3}
-						</h1>
-					</Col>
-				</Row>
-			</Container>
+			<div>
+				<div>
+					<h1 className="headline my-5 mx-2">
+						{message1}
+						<br />
+						{message2}
+						<br /> {message3}
+					</h1>
+				</div>
+			</div>
 		</div>
 	);
 };

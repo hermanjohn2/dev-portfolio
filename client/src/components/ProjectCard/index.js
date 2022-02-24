@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Card from 'react-bootstrap/Card';
 
-import './style.css';
+// import './style.css';
 
 const ProjectCard = ({ data, wait }) => {
 	const [message, setMessage] = useState('');
@@ -31,31 +31,26 @@ const ProjectCard = ({ data, wait }) => {
 
 	return (
 		<div>
-			<Card className="shadow-lg p-5 m-5 rounded">
-				<Row className="no-gutters">
-					<Col className="pt-3" md={4}>
-						<Card.Link href={data.deployedLink} target="_blank">
-							<Card.Img variant="top" src={data.img} alt={data.alt} />
-						</Card.Link>
-					</Col>
-					<Col md={8}>
-						<Card.Body>
-							<Card.Link
-								className="link"
-								href={data.deployedLink}
-								target="_blank">
-								<Card.Title>
-									<span className="project-title">
-										{data.title}
-									</span>
-								</Card.Title>
-							</Card.Link>
+			<div>
+				<div>
+					<div className="pt-3" md={4}>
+						<div href={data.deployedLink} target="_blank">
+							<img src={data.img} alt={data.alt} />
+						</div>
+					</div>
+					<div>
+						<div>
+							<div className="link" href={data.deployedLink} target="_blank">
+								<h1>
+									<span className="project-title">{data.title}</span>
+								</h1>
+							</div>
 
-							<Card.Text>
+							<div>
 								{data.description}
 								<br />
 								<br />
-								<Card.Link
+								<a
 									onMouseEnter={() => handleHover()}
 									className="gh-card-link fa fa-github"
 									href={data.githubLink}
@@ -64,12 +59,12 @@ const ProjectCard = ({ data, wait }) => {
 									">
 									{' '}
 									<span>{message}</span>
-								</Card.Link>
-							</Card.Text>
-						</Card.Body>
-					</Col>
-				</Row>
-			</Card>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 import { openPopupWidget } from 'react-calendly';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import './style.css';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Card from 'react-bootstrap/Card';
+// import './style.css';
 import aboutMeData from '../../db/aboutMe.json';
 
 const Contact = () => {
@@ -12,18 +12,18 @@ const Contact = () => {
 
 	return (
 		<div>
-			<Container>
-				<Row>
-					<Col md={12}>
+			<div>
+				<div>
+					<div>
 						<h1 className="headline my-3 text-center">Let's Build Together</h1>
-					</Col>
-				</Row>
-			</Container>
+					</div>
+				</div>
+			</div>
 
-			<Card className="contact-card shadow-lg rounded">
-				<Row className="no-gutters">
-					<Col md={8}>
-						<Card.Body>
+			<div className="contact-card shadow-lg rounded">
+				<div className="no-gutters">
+					<div md={8}>
+						<div>
 							<h2>{aboutMeData[0].name}</h2>
 							<h2>{aboutMeData[0].location}</h2>
 							<h2>{aboutMeData[0].email}</h2>
@@ -32,10 +32,10 @@ const Contact = () => {
 							<h2 className="link" onClick={() => openPopupWidget({ url })}>
 								Schedule a Meeting
 							</h2>
-						</Card.Body>
-					</Col>
-				</Row>
-			</Card>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

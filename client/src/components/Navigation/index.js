@@ -1,34 +1,61 @@
 import React from 'react';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import aboutMeData from '../../db/aboutMe.json';
-import './style.css';
+
+const navObj = [
+	{
+		title: 'John Herman',
+		url: '/',
+		external: false
+	},
+	{
+		title: 'Projects',
+		url: '/projects',
+		external: false
+	},
+	{
+		title: 'Contact',
+		url: '/contact',
+		external: false
+	},
+	{
+		title: 'About Me',
+		url: '/about',
+		external: false
+	},
+	{ title: 'GitHub', url: aboutMeData[0].gitHubUrl, external: true },
+	{ title: 'LinkedIn', url: aboutMeData[0].linkedInUrl, external: true }
+];
 
 const Navigation = () => {
 	return (
-		<div>
-			<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-				<Navbar.Brand href="/#/home">John Herman | Developer</Navbar.Brand>
-				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav className="mr-auto">
-						<Nav.Link href="/#/projects">Projects</Nav.Link>
-						<Nav.Link href="/#/contact">Contact</Nav.Link>
-						<Nav.Link href="/#/about">About Me</Nav.Link>
-					</Nav>
-					<Nav>
-						<Nav.Link
-							href={aboutMeData[0].gitHubUrl}
-							className="nav-icons fa fa-github active"
-							target="_blank"></Nav.Link>
-						<Nav.Link
-							href={aboutMeData[0].linkedInUrl}
-							className="nav-icons fa fa-linkedin active"
-							target="_blank"></Nav.Link>
-					</Nav>
-				</Navbar.Collapse>
-			</Navbar>
-		</div>
+		<nav className="flex sm: justify-center space-x-12">
+			{navObj.map(({ title, url, external }) =>
+				!external ? (
+					<Link
+						to={url}
+						className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">
+						{title}
+					</Link>
+				) : (
+					<a
+						href={url}
+						className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900"
+						target="_blank">
+						{title}
+					</a>
+				)
+			)}
+
+			{/* <a href="/">John Herman | Developer</a>
+
+			<a href="/projects">Projects</a>
+			<a href="/contact">Contact</a>
+			<a href="/about">About Me</a>
+
+			<a href={aboutMeData[0].gitHubUrl} target="_blank"></a>
+			<a href={aboutMeData[0].linkedInUrl} target="_blank"></a> */}
+		</nav>
 	);
 };
 
