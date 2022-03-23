@@ -9,8 +9,8 @@ const msPerChar = 200;
 
 // Each individual line being printed in Animation
 const firstLine = 'Hi,';
-const secondLine = `I'm John.`;
-const thirdLine = 'A software engineer.';
+const secondLine = "I'm John.";
+const thirdLine = 'A developer.';
 
 const Home = () => {
 	const [message1, setMessage1] = useState('');

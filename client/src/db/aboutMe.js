@@ -1,10 +1,12 @@
+import resume from './pdf/jh-resume.pdf';
+
 const aboutMeObj = {
 	name: 'John Herman',
 	location: 'Atlanta, GA',
 	email: 'hermanjohn2@gmail.com',
 	contactNumber: '(770) 241-6512',
 	links: {
-		resume: { link: '/pdf/jh-resume.pdf', icon: 'fa-file-text', newTab: true },
+		resume: { link: resume, icon: 'fa-file-text', newTab: true },
 		linkedIn: {
 			link: 'https://www.linkedin.com/in/john-joseph-herman/',
 			icon: 'fa-linkedin',

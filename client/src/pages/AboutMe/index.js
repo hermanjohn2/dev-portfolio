@@ -6,7 +6,7 @@ import aboutMeData from '../../db/aboutMe';
 import globalUtils from '../../globalUtils';
 // import './style.css';
 
-const { github, linkedIn } = aboutMeData.links;
+const { github, linkedIn, resume } = aboutMeData.links;
 
 const AboutMe = () => {
 	return (
@@ -17,21 +17,21 @@ const AboutMe = () => {
 			</div>
 
 			<div className="grid lg:grid-cols-2 gap-2 mb-0">
-				<div className="shadow-lg bg-black p-10 m-10">
-					<div className="text-lg text-center m-0 md:text-2xl md:m-2">
+				<div className="shadow-lg bg-gradient-to-t from-black to-dark-gray md:bg-gradient-to-t md:from-[#0a0a0a] md:to-[#121212] p-10 m-10">
+					<div className="text-lg m-0 md:text-2xl md:m-2">
 						<p>{aboutMeData.brandStatement}</p>
-						<div className="mt-10 text-5xl text-center">
-							{[github, linkedIn].map(obj => (
+						<div className="mt-10 text-4xl md:text-5xl text-center">
+							{[github, linkedIn, resume].map(obj => (
 								<CustomLink
 									{...obj}
 									key={`${obj.link}-about-me-link`}
-									className="px-5 text-bright hover:text-white hover:opacity-50"
+									className="px-5 text-bright hover:text-white hover:opacity-50 lg:pt-16"
 								/>
 							))}
 						</div>
 					</div>
 				</div>
-				<div className="shadow-lg bg-black p-10 m-10">
+				<div className="shadow-lg bg-gradient-to-t from-black to-dark-gray md:bg-gradient-to-t md:from-[#0a0a0a] md:to-[#121212] p-10 m-10">
 					{aboutMeData.technologies.map(({ title, list }) => (
 						<div key={`${title}-tech-info`} className="m-2">
 							<h3 className="text-2xl text-bright">{title}</h3>
