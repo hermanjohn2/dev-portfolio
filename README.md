@@ -10,7 +10,7 @@ A React App that displays my projects and assignments as a developer.
 
 ## Usage
 
-[Open my application](https://hermanjohn2.github.io/)
+[Open my application](https://john-herman.herokuapp.com/)
 
 ## Contributing
 
