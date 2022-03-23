@@ -19,7 +19,7 @@ const ProjectCard = ({ data }) => {
 			].map(({ href, icon }) => (
 				<a
 					key={`${href}-link`}
-					className={`fa ${icon} text-bright text-4xl px-5 pt-5 hover:text-white hover:opacity-75`}
+					className={`fa ${icon} text-bright text-3xl px-5 pt-5 hover:text-white hover:opacity-75`}
 					href={href}
 					rel="noopener noreferrer"
 					target="_blank"
