@@ -7,7 +7,7 @@ import logo from '../../db/img/logo.png';
 const { home, projects, aboutMe, linkedIn, github } = aboutMeData.links;
 
 const Logo = () => (
-	<img className="h-11 drop-shadow-2xl" src={logo} alt="John Herman Logo" />
+	<img className="h-11 drop-shadow-xl" src={logo} alt="John Herman Logo" />
 );
 
 const Navigation = () => {
@@ -18,9 +18,9 @@ const Navigation = () => {
 			<div className="flex items-center mr-6">
 				<CustomLink {...home} key={`${home.link}-nav-link`} title={<Logo />} />
 			</div>
-			<div className="block dropdown relative text-2xl lg:hidden">
+			<div className="block dropdown relative text-xl lg:hidden">
 				<button
-					className="dropdown-toggle px-7 py-2.5 uppercase border border-black rounded text-2xl"
+					className="dropdown-toggle px-7 py-2.5 uppercase border border-black rounded text-xl"
 					// className={`dropdown-toggle items-center px-6 border border-black  py-2.5 rounded
 
 					onClick={() => setHidden(hidden ? false : true)}>

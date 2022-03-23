@@ -55,7 +55,7 @@ const Home = () => {
 	}, [hasAnimated, animateText]);
 
 	return (
-		<main className="container mx-auto mt-20 text-white text-7xl lg:text-9xl font-writing">
+		<main className="container mx-auto mt-20 text-white text-6xl lg:text-8xl font-writing">
 			{[message1, message2, message3].map((item, i) => (
 				<h1
 					className={`m-5${i === 1 ? ' text-bright' : ''}`}
