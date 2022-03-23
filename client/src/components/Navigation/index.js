@@ -1,60 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import aboutMeData from '../../db/aboutMe.json';
+import CustomLink from '../CustomLink';
+import aboutMeData from '../../db/aboutMe';
+import logo from '../../db/img/logo.png';
 
-const navObj = [
-	{
-		title: 'John Herman',
-		url: '/',
-		external: false
-	},
-	{
-		title: 'Projects',
-		url: '/projects',
-		external: false
-	},
-	{
-		title: 'Contact',
-		url: '/contact',
-		external: false
-	},
-	{
-		title: 'About Me',
-		url: '/about',
-		external: false
-	},
-	{ title: 'GitHub', url: aboutMeData[0].gitHubUrl, external: true },
-	{ title: 'LinkedIn', url: aboutMeData[0].linkedInUrl, external: true }
-];
+const { home, projects, aboutMe, linkedIn, github } = aboutMeData.links;
+
+const Logo = () => (
+	<img className="h-11 drop-shadow-2xl" src={logo} alt="John Herman Logo" />
+);
 
 const Navigation = () => {
+	const [hidden, setHidden] = useState(true);
+
 	return (
-		<nav className="flex sm: justify-center space-x-12">
-			{navObj.map(({ title, url, external }) =>
-				!external ? (
-					<Link
-						to={url}
-						className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">
-						{title}
-					</Link>
-				) : (
-					<a
-						href={url}
-						className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900"
-						target="_blank">
-						{title}
-					</a>
-				)
-			)}
+		<nav className="flex items-center justify-between flex-wrap p-6 text-black text-2xl bg-gradient-to-b from-gray to-bright static w-screen">
+			<div className="flex items-center mr-6">
+				<CustomLink {...home} key={`${home.link}-nav-link`} title={<Logo />} />
+			</div>
+			<div className="block dropdown relative text-2xl lg:hidden">
+				<button
+					className="dropdown-toggle px-7 py-2.5 uppercase border border-black rounded text-2xl"
+					// className={`dropdown-toggle items-center px-6 border border-black  py-2.5 rounded
 
-			{/* <a href="/">John Herman | Developer</a>
+					onClick={() => setHidden(hidden ? false : true)}>
+					<svg
+						className="h-3 w-3"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<title>Menu</title>
+						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+					</svg>
+				</button>
+				{/* Mobile Menu ----------- */}
+				<ul
+					className={
+						hidden
+							? 'hidden'
+							: 'absolute bg-gradient-to-t from-gray to-bright rounded-b-lg px-1 text-center border border-black divide-y border-t-0'
+					}>
+					{[projects, aboutMe, linkedIn, github].map(obj => (
+						<li
+							key={`${obj.link}-mobile-nav-link`}
+							onClick={() => setHidden(true)}>
+							<CustomLink
+								{...obj}
+								title={obj.link === '/about' ? 'About' : obj.title}
+								className="block text-sm px-2 py-4"
+							/>
+						</li>
+					))}
+				</ul>
+			</div>
 
-			<a href="/projects">Projects</a>
-			<a href="/contact">Contact</a>
-			<a href="/about">About Me</a>
-
-			<a href={aboutMeData[0].gitHubUrl} target="_blank"></a>
-			<a href={aboutMeData[0].linkedInUrl} target="_blank"></a> */}
+			<div className="lg:flex lg:items-center lg:w-auto hidden">
+				{[projects, aboutMe, github, linkedIn].map(obj => (
+					<CustomLink
+						{...obj}
+						key={`${obj.link}-nav-link`}
+						className="inline-block px-4 py-2 leading-none mt-4 lg:mt-0"
+					/>
+				))}
+			</div>
 		</nav>
 	);
 };

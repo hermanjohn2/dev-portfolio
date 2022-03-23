@@ -1,65 +1,48 @@
 import React from 'react';
 // import CardDeck from 'react-bootstrap/CardDeck';
 // import Card from 'react-bootstrap/Card';
-import aboutMeData from '../../db/aboutMe.json';
+import CustomLink from '../../components/CustomLink';
+import aboutMeData from '../../db/aboutMe';
+import globalUtils from '../../globalUtils';
 // import './style.css';
+
+const { github, linkedIn } = aboutMeData.links;
 
 const AboutMe = () => {
 	return (
-		<div>
-			<h1 className="headline my-3 text-center">{aboutMeData[0].name}</h1>
+		<main className="text-white">
+			<div className="my-10 text-center font-writing">
+				<h1 className="mb-5  text-7xl text-bright">{aboutMeData.name}</h1>
+				<h2 className="text-3xl">{aboutMeData.title}</h2>
+			</div>
 
-			<div className="pt-3 px-4">
-				<div className="shadow-lg">
-					<div>
-						<h1 className="title">{aboutMeData[0].title}</h1>
-						<div className="text">
-							{aboutMeData[0].brandStatement}
-
-							<a
-								className="link pro-materials-link"
-								href={aboutMeData[0].resumePdf}
-								target="_blank">
-								<br /> <br />
-								Resume
-							</a>
-							<a
-								className="link pro-materials-link"
-								href={aboutMeData[0].gitHubUrl}
-								target="_blank">
-								GitHub
-							</a>
-							<a
-								className="link pro-materials-link"
-								href={aboutMeData[0].linkedInUrl}
-								target="_blank">
-								LinkedIn
-							</a>
+			<div className="grid lg:grid-cols-2 gap-2 mb-0">
+				<div className="shadow-lg bg-black p-10 m-10">
+					<div className="text-lg text-center m-0 md:text-2xl md:m-2">
+						<p>{aboutMeData.brandStatement}</p>
+						<div className="mt-10 text-5xl text-center">
+							{[github, linkedIn].map(obj => (
+								<CustomLink
+									{...obj}
+									key={`${obj.link}-about-me-link`}
+									className="px-5 text-bright hover:text-white hover:opacity-50"
+								/>
+							))}
 						</div>
 					</div>
 				</div>
-				<div>
-					<div>
-						<h1 className="title">Languages</h1>
-						<p className="text">
-							{aboutMeData[0].languages.map(lang => lang + ' | ')}
-						</p>
-						<h1 className="title">Databases</h1>
-						<p className="text">
-							{aboutMeData[0].databases.map(db => db + ' | ')}
-						</p>
-						<h1 className="title">Libraries/Frameworks</h1>
-						<p className="text">
-							{aboutMeData[0].frameworks.map(framework => framework + ' | ')}
-						</p>
-						<h1 className="title">Methodologies</h1>
-						<p className="text">
-							{aboutMeData[0].methods.map(method => method + ' | ')}
-						</p>
-					</div>
+				<div className="shadow-lg bg-black p-10 m-10">
+					{aboutMeData.technologies.map(({ title, list }) => (
+						<div key={`${title}-tech-info`} className="m-2">
+							<h3 className="text-2xl text-bright">{title}</h3>
+							<p className="text-lg md:text-xl">
+								{globalUtils.arrToPipedStr(list)}
+							</p>
+						</div>
+					))}
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 

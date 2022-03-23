@@ -1,70 +1,30 @@
 import React, { useState } from 'react';
+import globalUtils from '../../globalUtils';
 
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import Card from 'react-bootstrap/Card';
-
-// import './style.css';
-
-const ProjectCard = ({ data, wait }) => {
-	const [message, setMessage] = useState('');
-	const [hasAnimated, setHasAnimated] = useState(false);
-
-	const handleHover = async () => {
-		if (!hasAnimated) {
-			let arr = 'Check out my code on GitHub!'.split('');
-			let msg = '';
-
-			for (const char in arr) {
-				await wait(100);
-				msg += arr[char];
-				setMessage(msg);
-			}
-
-			setHasAnimated(true);
-		}
-	};
-
-	// const wait = ms => {
-	// 	return new Promise(resolve => setTimeout(resolve, ms));
-	// };
-
+const ProjectCard = ({ data }) => {
 	return (
-		<div>
-			<div>
-				<div>
-					<div className="pt-3" md={4}>
-						<div href={data.deployedLink} target="_blank">
-							<img src={data.img} alt={data.alt} />
-						</div>
-					</div>
-					<div>
-						<div>
-							<div className="link" href={data.deployedLink} target="_blank">
-								<h1>
-									<span className="project-title">{data.title}</span>
-								</h1>
-							</div>
-
-							<div>
-								{data.description}
-								<br />
-								<br />
-								<a
-									onMouseEnter={() => handleHover()}
-									className="gh-card-link fa fa-github"
-									href={data.githubLink}
-									rel="noopener noreferrer"
-									target="_blank
-									">
-									{' '}
-									<span>{message}</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div className="text-white text-center text-2xl px-10 py-10 md:px-20 md:py-0">
+			<a href={data.deployedLink} target="_blank">
+				<h1 className="text-4xl mb-5 hover:text-bright">{data.title}</h1>
+				<img
+					className="mx-auto mb-5 h-1/2 hover:drop-shadow-2xl"
+					src={data.img}
+					alt={data.alt}
+				/>
+			</a>
+			<p>{globalUtils.arrToPipedStr(data.infoArr)}</p>
+			{[
+				{ href: data.githubLink, icon: 'fa-github' },
+				{ href: data.deployedLink, icon: 'fa-link' }
+			].map(({ href, icon }) => (
+				<a
+					key={`${href}-link`}
+					className={`fa ${icon} text-bright text-5xl p-5 hover:text-white hover:opacity-75`}
+					href={href}
+					rel="noopener noreferrer"
+					target="_blank"
+				/>
+			))}
 		</div>
 	);
 };

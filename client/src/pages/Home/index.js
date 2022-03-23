@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import globalUtils from '../../globalUtils';
-// import style from './style';
-// import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 
 // Time before the animation begins
 const msBeforeAnimate = 100;
@@ -14,7 +10,7 @@ const msPerChar = 200;
 // Each individual line being printed in Animation
 const firstLine = 'Hi,';
 const secondLine = `I'm John.`;
-const thirdLine = 'A developer.';
+const thirdLine = 'A software engineer.';
 
 const Home = () => {
 	const [message1, setMessage1] = useState('');
@@ -59,18 +55,15 @@ const Home = () => {
 	}, [hasAnimated, animateText]);
 
 	return (
-		<div>
-			<div>
-				<div>
-					<h1 className="headline my-5 mx-2">
-						{message1}
-						<br />
-						{message2}
-						<br /> {message3}
-					</h1>
-				</div>
-			</div>
-		</div>
+		<main className="container mx-auto mt-20 text-white text-7xl lg:text-9xl font-writing">
+			{[message1, message2, message3].map((item, i) => (
+				<h1
+					className={`m-5${i === 1 ? ' text-bright' : ''}`}
+					key={`home-msg-${i}`}>
+					{item}
+				</h1>
+			))}
+		</main>
 	);
 };
 
