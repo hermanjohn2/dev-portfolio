@@ -12,14 +12,14 @@ const ProjectCard = ({ data }) => {
 					alt={data.alt}
 				/>
 			</a>
-			<p>{globalUtils.arrToPipedStr(data.infoArr)}</p>
+			<p className="text-lg">{globalUtils.arrToPipedStr(data.infoArr)}</p>
 			{[
 				{ href: data.githubLink, icon: 'fa-github' },
 				{ href: data.deployedLink, icon: 'fa-link' }
 			].map(({ href, icon }) => (
 				<a
 					key={`${href}-link`}
-					className={`fa ${icon} text-bright text-4xl p-5 hover:text-white hover:opacity-75`}
+					className={`fa ${icon} text-bright text-4xl px-5 pt-5 hover:text-white hover:opacity-75`}
 					href={href}
 					rel="noopener noreferrer"
 					target="_blank"
