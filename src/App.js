@@ -9,7 +9,7 @@ import Navigation from './components/Navigation';
 
 const App = () => {
 	return (
-		<div className="font-main lg:bg-gradient-to-b lg:from-black lg:to-dark-gray bg-black w-full h-full lg:h-screen">
+		<div className="font-main bg-black w-full h-full">
 			<Navigation />
 			<div>
 				<Routes>

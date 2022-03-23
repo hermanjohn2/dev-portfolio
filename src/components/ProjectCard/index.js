@@ -3,7 +3,7 @@ import globalUtils from '../../globalUtils';
 
 const ProjectCard = ({ data }) => {
 	return (
-		<div className="text-white text-center text-xl px-10 py-10 md:px-20 md:py-0">
+		<div className="text-white text-center text-xl px-5 py-5 md:py-0">
 			<a href={data.deployedLink} target="_blank">
 				<h1 className="text-3xl mb-5 hover:text-bright">{data.title}</h1>
 				<img

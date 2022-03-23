@@ -17,7 +17,7 @@ const AboutMe = () => {
 			</div>
 
 			<div className="grid lg:grid-cols-2 gap-2 mb-0">
-				<div className="shadow-lg bg-gradient-to-t from-black to-dark-gray md:bg-gradient-to-t md:from-[#0a0a0a] md:to-[#121212] p-10 m-10">
+				<div className="shadow-lg bg-gradient-to-b from-dark-gray to-black p-5 m-5">
 					<div className="text-md m-0 md:text-xl md:m-2">
 						<p>{aboutMeData.brandStatement}</p>
 						<div className="mt-6 text-3xl md:text-4xl text-center">
@@ -31,7 +31,7 @@ const AboutMe = () => {
 						</div>
 					</div>
 				</div>
-				<div className="shadow-lg bg-gradient-to-t from-black to-dark-gray md:bg-gradient-to-t md:from-[#0a0a0a] md:to-[#121212] p-10 m-10">
+				<div className="shadow-lg bg-gradient-to-b from-dark-gray to-black p-5 m-5">
 					{aboutMeData.technologies.map(({ title, list }) => (
 						<div key={`${title}-tech-info`} className="m-2">
 							<h3 className="text-xl text-bright">{title}</h3>
