@@ -21,5 +21,3 @@ A React App that displays my projects and assignments as a developer.
 ## Questions
 
 Please send questions to: hermanjohn2@gmail.com
-
-![GitHub Avatar](https://avatars0.githubusercontent.com/u/57771371?v=4)
