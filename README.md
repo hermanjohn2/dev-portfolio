@@ -1,5 +1,7 @@
 # John Herman's Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a340e3b-be90-4312-9804-a7102be563c2/deploy-status)](https://app.netlify.com/sites/john-herman/deploys)
+
 A React App that displays my projects and assignments as a developer.
 
 ## Table of Contents
